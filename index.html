@@ -26,75 +26,14 @@
           ></textarea>
         </div>
         <div class="card-footer">
-          <button onclick="gfg_Run()">Generate Password</button>
+          <button onclick="run()">Generate Password</button>
         </div>
       </div>
     </div>
-    <script>
-
-
-
-      var clickToPlay = confirm("Click Generate Password")
-      
-      var el_down = document.getElementById("password"); 
-        
-    // declaring variables 
-        function generatePassword() { 
-            var pass = ''; 
-            var number = "0123456789"; 
-            var symbol = "!%^&@#$";
-            var upeerCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"; 
-            var lowerCase = "bcdefghijklmnopqrstuvwxyz";
-            var str = ''; 
-              
-            
-            
-    // asking the user         
-            
-            var userPassLength = prompt("Choose a length between 8 and 128?");
-            var userUpperCase = confirm("Do you need uppercase character's in your password?");
-            var userLowerCase = confirm ("Would you like lowercase letters in your password?");
-            var userSymbol = confirm ("Would you like to use symbols in your password?");
-            var userNumber = confirm ("Would you like to include numbers in your password?");
-
-            
-
-            if (userUpperCase === true) {
-              str+="ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-              }
-            if (userNumber === true) {
-              str+="0123456789";
-              }
-            if (userLowerCase === true) {
-              str+="bcdefghijklmnopqrstuvwxyz";
-              }
-            if (userSymbol === true) {
-              str+="!%^&@#$";
-              }
-
-            if (userSymbol=== false && userUpperCase=== false && userNumber===false && userLowerCase===false) {
-              alert ("Try again, you must use one set of characters");
-              
-            }
-            
-            
-
-            for (i = 1; i <= userPassLength; i++) { 
-                var char = Math.floor(Math.random() 
-                            * str.length + 1); 
-                  
-                pass += str.charAt(char) 
-            } 
-              
-            return pass; 
-        } 
-        
-
-        function gfg_Run() { 
-            el_down.innerHTML = generatePassword(); 
-        } 
-
-
-    </script>>
+    
+    
+    
+    
+    <script src="js.js"></script>>
   </body>
 </html>
