@@ -4,36 +4,44 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
+    <link rel="stylesheet" href="style.css" />
     <title>Password Generator</title>
-    <link rel="stylesheet" href="stylesheet.css" />
+    
   </head>
   <body>
-    <div class="wrapper">
-      <header>
-        <h1>Password Generator</h1>
-      </header>
-      <div class="card">
-        <div class="card-header">
-          <h2>Generate a Password</h2>
-          
+    <div class="container">
+      <div class="card-container">
+        <div class="output-container">
+          <output class="output-area" placeholder="Your New Passwor">New Password Will Be Here</output>
+          <button class="clipboard-copy">
+            <i class="fas fa-clipboard"></i>
+          </button>
         </div>
-        <div class="card-body">
-          <textarea
-            readonly
-            id="password"
-            placeholder="Your Secure Password"
-            aria-label="Generated Password"
-          ></textarea>
+        <div class="length-container">
+          <input type="checkbox" id="length-checkbox">
+          <label for="length-checkbox"></label>
         </div>
-        <div class="card-footer">
-          <button onclick="run()">Generate Password</button>
+        <div class="uppercase-container">
+          <label for="uppercase-checkbox">Include Uppercase Letters</label>
+          <input type="checkbox" id="uppercase-checkbox">
+        </div>
+        <div class="lowercase-container">
+          <label for="lowercase-checkbox">Include Lowercase Letters</label>
+          <input type="checkbox" id="lowercase-checkbox">
+        </div>
+        <div class="numbers-container">
+          <label for="numbers-checkbox">Include Numbers</label>
+          <input type="checkbox" id="numbers-checkbox">
+        </div>
+        <div class="symbols-container">
+          <label for="symbols-checkbox">Include Symbols</label>
+          <input type="checkbox" id="symbols-checkbox">
         </div>
       </div>
     </div>
     
     
-    
-    
-    <script src="js.js"></script>>
+    <script src="scripts.js"></script>>
   </body>
 </html>
