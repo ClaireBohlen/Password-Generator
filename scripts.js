@@ -1,17 +1,27 @@
-// //declaring varables outside of the function
+// Randon Functions 
+function randomLowerCase (){
+    return String.fromCharCode(Math.floor(Math.random() * 26) + 97)
+}
+function randomUppercase (){
+    return String.fromCharCode(Math.floor(Math.random() * 26) + 65)
+}
+function randomNumber (){
+    return String.fromCharCode(Math.floor(Math.random() * 10) + 49)
+}
+function randomSymbol (){
+    return String.fromCharCode(Math.floor(Math.random() * 15) + 33)
+}
 
-//     var clickToPlay = confirm("Click Generate Password")
-      
-//     var play = document.getElementById("password"); 
-  
-// // declaring variables within the function
-//   function generatePassword() { 
-//       var pass = ''; 
-//       var number = "0123456789"; 
-//       var symbol = "!%^&@#$";
-//       var upeerCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"; 
-//       var lowerCase = "bcdefghijklmnopqrstuvwxyz";
-//       var str = ''; 
+
+console.log(randomUppercase())
+console.log(randomLowerCase())
+console.log(randomNumber())
+console.log(randomSymbol())
+
+
+
+
+    
         
 // // promting the user         
 //       var userPassLength = prompt("Choose a length between 8 and 128?");
