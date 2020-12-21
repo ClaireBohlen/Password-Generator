@@ -2,10 +2,35 @@
 const submit = document.querySelector('.submit-button')
 const symbolsEl = document.querySelector('.symbols-check')
 const numbersEl = document.querySelector('.numbers-check')
+const lowerEl = document.querySelector('.lower-check')
+const upperEl = document.querySelector('.upper-check')
+const lengthEl = document.querySelector('.length-check')
+const outputEl = document.querySelector('.output-area')
+//add clipboard
+
+//Put random functions into an object
+const randomFunc = {
+    lower: randomLowerCase,
+    upper: randomUppercase,
+    numer: randomNumber,
+    symbol: randomSymbol
+
+}
 
 
 
 //Event listener for the submit button
+
+submit.addEventListener('click', ()=> {
+    const length = +lengthEl.value;
+    const hasLower = lowerEl.checked;
+    const hasUpper = upperEl.checked;
+    const hasSymbol = symbolsEl.checked;
+    const hasNumber = numbersEl.checked;
+
+    console.log(length, hasLower, hasNumber, hasSymbol, hasUpper)
+
+})
 
 
 
