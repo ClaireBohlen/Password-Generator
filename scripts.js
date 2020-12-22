@@ -28,9 +28,37 @@ submit.addEventListener('click', ()=> {
     const hasSymbol = symbolsEl.checked;
     const hasNumber = numbersEl.checked;
 
-    console.log(length, hasLower, hasNumber, hasSymbol, hasUpper)
+    outputEl.innerText = generatePass (
+    length, 
+    hasLower, 
+    hasNumber, 
+    hasSymbol, 
+    hasUpper
+    )
 
 })
+
+function generatePass(lower, upper, number, symbol, length){
+    let generatedPassword = ''
+    const typesCount = lower + upper + number + symbol
+    const typesArray = [{lower}, {upper}, {number}, {symbol}].filter(item => Object.values(item)[0])
+
+    if(typesCount === 0){
+        return ''
+
+    }
+    for(let i=0; i<length; i+=typesCount){
+        typesArray.forEach(type =>{
+            const funcName = Object.keys(type)[0]
+            generatedPassword += randomFunc[funcName]()
+        })
+    }
+
+    const finalPassword = generatedPassword.slice(0, length)
+
+    return finalPassword
+
+}
 
 
 
