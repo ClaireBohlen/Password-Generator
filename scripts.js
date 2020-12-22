@@ -38,6 +38,7 @@ submit.addEventListener('click', ()=> {
 
 })
 
+//Generate the Final password based on the user input and checked boxes
 function generatePass(lower, upper, number, symbol, length){
     let generatedPassword = ''
     const typesCount = lower + upper + number + symbol
@@ -79,10 +80,10 @@ function randomSymbol (){
 }
 
 
-console.log(randomUppercase())
-console.log(randomLowerCase())
-console.log(randomNumber())
-console.log(randomSymbol())
+// console.log(randomUppercase())
+// console.log(randomLowerCase())
+// console.log(randomNumber())
+// console.log(randomSymbol())
 
 
 
