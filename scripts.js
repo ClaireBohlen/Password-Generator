@@ -13,7 +13,7 @@ const randomFunc = {
     lower: randomLowerCase,
     upper: randomUppercase,
     numer: randomNumber,
-    symbol: randomSymbol,
+    symbol: randomSymbol
     
     
 }
@@ -44,34 +44,39 @@ submit.addEventListener('click', ()=> {
 //Generate the Final password based on the user input and checked boxes
 function generatePassword(lower, upper, number, symbol, length){
     let generatedPassword = '';
-    //number of checked boxes
-    const typesCount = lower + upper + number + symbol ;
-    //gets the object with true or false object
-    console.log('typesCount:', typesCount)
-    const typesArray = [{lower}, {upper}, {number}, {symbol}].filter(item => Object.values(item)[0])
-    console.log(typesArray)
-    //If false it will be filtered out of the array
     
-
+   //number of checked boxes 
+   //gets the object with true or false object 
+    const typesCount = lower + upper + number + symbol ;
+    
+    
+    
+    
+     //Array of Objects by wrapping in curly braces
+    //If false it will be filtered out of the array
+    const typesArray = [{lower}, {upper}, {number}, {symbol}].filter(item => Object.values(item)[0])
+   
+    
+    //If none are checked it will return nothing
     if(typesCount === 0){
         return ''
 
     }
-    // for(let i=0; i<length; i+=typesCount) {
-    //     typesArray.forEach(type => {
-    //         const funcName = Object.keys(type)[0];
-    //         generatedPassword += randomFunc[funcName]();
+    
+    //Loop though the typesArray and call the 
+    for(let i=0; i<length; i+=typesCount) {
+        typesArray.forEach(type => {
+            const funcName = Object.keys(type)[0];
+            // console.log(funcName)
+
+            generatedPassword += randomFunc[funcName]();
+            // generatedPassword += randomFunc[funcName]();
             
 
-    //     })
+        })
 
-    // }
-    for(let i=0; i<length; i+=typesCount) {
-		typesArray.forEach(type => {
-			const funcName = Object.keys(type)[0];
-			generatedPassword += randomFunc[funcName]();
-		});
-	}
+    }
+    
 	
 
     const finalPassword = generatedPassword.slice(0, length)
@@ -101,6 +106,7 @@ function randomNumber (){
 function randomSymbol (){
     return String.fromCharCode(Math.floor(Math.random() * 15) + 33)
 }
+
 
 
 // console.log(randomUppercase())
